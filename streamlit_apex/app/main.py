@@ -8,7 +8,7 @@ import tempfile
 import csv
 import numpy as np
 import matplotlib.pyplot as plt
-from datetime import datetime
+from datetime import datetime, timedelta
 import streamlit as st
 import boto3
 import altair as alt
@@ -65,8 +65,8 @@ def get_data_from_dynamodb():
 
 def create_initial_chart(df):
 
-    start_date = '2023/03/01'
-    end_date = '2023/03/28'
+    end_date = datetime.now()
+    start_date = end_date - timedelta(days=90)
 
     df_filtered = df[(df['Date'] >= start_date) & (df['Date'] <= end_date)]
 
