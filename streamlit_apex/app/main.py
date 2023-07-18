@@ -17,7 +17,7 @@ from altair_saver import save
 def main():
 
     # タイトル
-    st.title('身内用ランクポイント推移')
+    st.title('ポイント推移')
 
     #
     df = get_data_from_dynamodb()
